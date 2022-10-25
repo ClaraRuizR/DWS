@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Esto es el titulo</title>
+    <title>DWS Clara Ruiz</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,14 +16,7 @@
 
                 <h2>Ejercicios</h2>
 
-                <ul class="lista_ejercicios">
-                    <li><a href="0_hola_mundo.php">0. Hola, mundo</a></li>
-                    <li><a href="1_hola_mundo_comentarios.php">1. Hola, mundo (con comentarios)</a></li>
-                    <li><a href="2.variables_y_tipos.php">2. Variables y tipos</a></li>
-                    <li><a href="3.arrays_bucles.php">3. Arrays y bucles</a></li>
-                    <li><a href="4.constantes.php">4. Constantes</a></li>
-                    <li><a href="5.variables_super_globales.php">5. Variables super globales</a></li>
-                </ul>
+                <a href="..">Volver a la carpeta</a>
 
             </div>
 

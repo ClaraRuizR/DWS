@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Información en PHP</title>
+    <title>DWS Clara Ruiz</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,9 +16,7 @@
 
                 <h2>Ejercicios</h2>
 
-                <ul class="lista_ejercicios">
-                    <li>EJERCICIOS AQUÍ</li>
-                </ul>
+                <a href="..">Volver a la carpeta</a>
 
             </div>
 

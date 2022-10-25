@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Esto es el titulo</title>
+    <title>DWS Clara Ruiz</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -8,7 +8,7 @@
         
         <div class="primera_caja">
             <a class="link_indice" href="../index.php">INICIO</a>
-            <h1 class="titulo1">TÍTULO AQUÍ</h1>
+            <h1 class="titulo1">Validar parámetros</h1>
         </div>
         <div class="segunda_caja">
 
@@ -16,9 +16,7 @@
 
                 <h2>Ejercicios</h2>
 
-                <ul class="lista_ejercicios">
-                    <li>EJERCICIOS AQUÍ</li>
-                </ul>
+                <a href="..">Volver a la carpeta</a>
 
             </div>
 

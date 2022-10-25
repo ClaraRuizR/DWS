@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Índice</title>
+    <title>DWS Clara Ruiz</title>
     <link rel="stylesheet" href="style_a.css">
 </head>
 <body>
@@ -17,8 +17,7 @@
                 <h2>Ejercicios</h2>
 
                 <ul class="lista_ejercicios">
-                    <li><a href="unidad1.php">UNIDAD 1</a></li>
-                    <li><a href="unidad2.php">UNIDAD 2</a></li>
+                    <li><a href="unidad1_2.php">UNIDAD 1 Y 2</a></li>
                 </ul>
 
             </div>
