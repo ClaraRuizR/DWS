@@ -1,0 +1,72 @@
+* {margin: 0px; padding: 0px;} /* margin es el margen exterior. padding, margen interior */
+.primera_caja{
+    background-color: rgb(255, 255, 255);
+    height: 17%;
+}
+.segunda_caja{
+    background-color: rgb(149, 149, 149);
+    height: 80%;
+}
+.tercera_caja{
+    background-color: rgb(221, 141, 122);
+    height: 3%;
+    font-size: 18px;
+    text-align: center;
+    color: rgb(100, 63, 54);
+   
+}
+.primera_columna{
+    float:left;
+    height: 100%;
+    width: 33.333%;
+    background-color: rgb(129, 162, 170);
+
+}
+.segunda_columna{
+    float:left;
+    height: 100%;
+    width: 33.333%;
+    background-color: rgb(218, 218, 218);
+}
+
+.tercera_columna{
+    float:left;
+    height: 100%;
+    width: 33.333%;
+    background-color: rgb(149, 149, 149);
+}
+
+.contenedor{
+    background-color: black;
+    height: 100%;
+    width: 100%;
+}
+
+.lista_ejercicios{
+    font-size: 20px;
+    padding: 20px;
+    margin: 20px;
+}
+
+h2{
+    margin: 20px;
+}
+
+.titulo1{
+    margin: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.link_indice{
+    margin: 20px;
+}
+
+.texto1{
+    padding: 20px;
+}
+
+
+a{
+    text-decoration: none;
+    color: rgb(25, 61, 83);
+}
