@@ -1,0 +1,36 @@
+table, tr, td{
+    
+    border: 1px black solid;
+    border-collapse: collapse;
+}
+
+p{
+    margin: 20px;
+}
+#rojo{
+    background-color: rgb(189, 91, 91);
+}
+
+#verde{
+    background-color: rgb(121, 197, 121);
+}
+
+table{
+    margin: auto;
+}
+
+h1{
+    text-align: center;
+}
+
+#texto_rojo{
+    color: rgb(189, 91, 91);
+    font-weight: 600;
+    text-align: center;
+}
+
+#texto_verde{
+    color: rgb(121, 197, 121);
+    font-weight: 600;
+    text-align: center;
+}
