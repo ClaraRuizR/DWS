@@ -5,14 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cuadrado mágico</title>
-    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/estilos_cuadrado_magico.css">
 
 </head>
 
 <body>
-    <div>
-        <h1>Cuadrado mágico</h1>
-    </div>
 
     <?php
 
@@ -21,12 +18,6 @@
 
         //ini_set('display_errors', 'On');
         //ini_set('html_errors', 0);
-
-        /*$arrayCuadrado = [
-            [4, 9, 2],
-            [8, 5, 7],
-            [8, 1, 2]
-        ];*/
 
         $arrayCuadrado = [
             [4, 9, 2],
@@ -81,9 +72,6 @@
                 throw new Exception("Error inesperado en sumar filas, comprueba arrayCuadrado");
             }
 
-            if(!isset($contadorArray)){
-                throw new Exception("Error inesperado en sumarFilas, comprueba contadorArray");
-            };
                 $arrayResultado = [];
 
                 for ($i = 0; $i < $contadorArray; $i++){
@@ -106,6 +94,10 @@
 
         function sumarColumnas($arrayCuadrado, $contadorArray){
 
+            if(!isset($arrayCuadrado)){
+                throw new Exception("Error inesperado en sumar filas, comprueba arrayCuadrado");
+            }
+
             $arrayResultado = [];
 
             for ($i = 0; $i < $contadorArray; $i++){
@@ -121,6 +113,10 @@
         }
 
         function sumarDiagonales($arrayCuadrado, $contadorArray){
+
+            if(!isset($arrayCuadrado)){
+                throw new Exception("Error inesperado en sumar filas, comprueba arrayCuadrado");
+            }
 
             $arrayResultado = [];
             $resultado = 0;
@@ -148,6 +144,8 @@
 
             $contadorArray = count($cuadrado1->arrayCuadrado);
 
+            echo "<div><h1>Cuadrado mágico</h1></div>";
+
             if($cuadrado1->esCuadradoMagico){
                 echo "<table id='verde'>";
             } else{
@@ -169,7 +167,7 @@
             if($cuadrado1->esCuadradoMagico){
                 echo "<p id='texto_verde'>ES UN CUADRADO MÁGICO</p>";
                 echo"<div id='analisis'>Respecto a la suma de la primera fila, que es $cuadrado1->primerResultado:
-                <br>Las filas iguales a primerResultado son:<br>";
+                <br><br>Las filas iguales a $cuadrado1->primerResultado son:<br>";
 
                 for($i = 0; $i < count($cuadrado1->resultadoFilas); $i++){
                     if($cuadrado1->resultadoFilas[$i] == $cuadrado1->primerResultado){
@@ -203,7 +201,7 @@
                 echo "<p id='texto_rojo'>NO ES UN CUADRADO MÁGICO</p>";
 
                 echo"<div id='analisis'>Respecto a la suma de la primera fila, que es $cuadrado1->primerResultado:
-                <br>Las filas diferentes a $cuadrado1->primerResultado son:<br>";
+                <br><br>Las filas diferentes a $cuadrado1->primerResultado son:<br>";
 
                 for($i = 0; $i < count($cuadrado1->resultadoFilas); $i++){
                     if($cuadrado1->resultadoFilas[$i] != $cuadrado1->primerResultado){

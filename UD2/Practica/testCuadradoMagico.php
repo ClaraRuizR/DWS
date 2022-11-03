@@ -5,24 +5,8 @@
         //ini_set('display_errors', 'On');
         //ini_set('html_errors', 0);
 
-        /*$arrayCuadrado = [
-            [4, 9, 2],
-            [8, 5, 7],
-            [8, 1, 2]
-        ];
 
-        $arrayCuadrado2 = [
-            [4, 9, 2],
-            [3, 5, 7],
-            [8, 1, 6]
-        ];*/
-
-        //Pasar array que no sea cuadrado
-        //Pasar un string
-        //Tests que den KO
-        //Tests que pinten
-
-        function testPintarCuadradoCorrecto(){
+        function testPintarCuadrado1(){
 
             $arrayCuadrado = [
                 [4, 9, 2],
@@ -39,7 +23,7 @@
 
         }
 
-        function testPintarCuadradoErroneo(){
+        function testPintarCuadrado2(){
 
             $arrayCuadrado = [
                 [4, 9, 2],
@@ -55,8 +39,7 @@
             pintarCuadradoMagico($resultado);
 
         }
-
-        /*--------------------------------------ANALIZAR CUADRADO-------------------------------------*/
+        
         function testAnalizarCuadradoCorrecto(){
 
             $arrayCuadrado = [
@@ -110,10 +93,6 @@
             return ($resultado == $resultadoEsperado);
         }
 
-        
-
-        /*------------------------------------------SUMA FILAS--------------------------------------------*/ 
-
         function testsumarFilasValorCorrecto(){
 
             
@@ -122,6 +101,7 @@
                 [3, 5, 7],
                 [8, 1, 6]
             ];
+            
             $resultadoEsperado = [15, 15, 15];
             $contadorArray = count($arrayCuadrado);
             
@@ -132,30 +112,15 @@
 
         function testsumarFilasValorErroneo(){
 
-            
             $arrayCuadrado = [
                 [4, 9, 2],
                 [8, 5, 7],
                 [8, 1, 2]
             ];
+
             $resultadoEsperado = [15, 15, 15];
             $contadorArray = count($arrayCuadrado);
             
-            $resultado = sumarFilas($arrayCuadrado, $contadorArray);
-            
-            return ($resultado == $resultadoEsperado);
-        }
-
-        function testsumarFilasValorCero(){
-
-            $arrayCuadrado = [
-                [0, 0, 0],
-                [0, 0, 0],
-                [0, 0, 0]
-            ];
-            $resultadoEsperado = [0, 0, 0];
-            $contadorArray = count($arrayCuadrado);
-
             $resultado = sumarFilas($arrayCuadrado, $contadorArray);
             
             return ($resultado == $resultadoEsperado);
@@ -175,28 +140,102 @@
             }                    
         }
 
-        function testsumarFilasContadorIndefinido(){
+        function testsumarColumnasValorCorrecto(){
 
+            
             $arrayCuadrado = [
                 [4, 9, 2],
                 [3, 5, 7],
                 [8, 1, 6]
             ];
-            $resultadoEsperado = "Error inesperado en sumarFilas, comprueba contadorArray";
-            $contadorArray;
             
+            $resultadoEsperado = [15, 15, 15];
+            $contadorArray = count($arrayCuadrado);
+            
+            $resultado = sumarColumnas($arrayCuadrado, $contadorArray);
+            
+            return ($resultado == $resultadoEsperado);
+        }
+
+        function testsumarColumnasValorErroneo(){
+
+            $arrayCuadrado = [
+                [4, 9, 2],
+                [8, 5, 7],
+                [8, 1, 2]
+            ];
+
+            $resultadoEsperado = [15, 15, 15];
+            $contadorArray = count($arrayCuadrado);
+            
+            $resultado = sumarColumnas($arrayCuadrado, $contadorArray);
+            
+            return ($resultado == $resultadoEsperado);
+        }
+
+        function testsumarColumnasMatrizIndefinida(){
+
+            $arrayCuadrado;
+            $resultadoEsperado = "Error inesperado en sumar filas, comprueba arrayCuadrado";
+            $contadorArray = 1;
 
             try{
-                sumarFilas($arrayCuadrado, $contadorArray);
+                sumarColumnas($arrayCuadrado, $contadorArray);
             }catch (Exception $e){
 
                 return ($e->getMessage() == $resultadoEsperado);
             }                    
         }
 
+
+        function testsumarDiagonalesValorCorrecto(){
+
+            
+            $arrayCuadrado = [
+                [4, 9, 2],
+                [3, 5, 7],
+                [8, 1, 6]
+            ];
+            
+            $resultadoEsperado = [15, 15];
+            $contadorArray = count($arrayCuadrado);
+            
+            $resultado = sumarDiagonales($arrayCuadrado, $contadorArray);
+            
+            return ($resultado == $resultadoEsperado);
+        }
+
+        function testsumarDiagonalesValorErroneo(){
+
+            $arrayCuadrado = [
+                [4, 9, 2],
+                [8, 5, 7],
+                [8, 1, 2]
+            ];
+
+            $resultadoEsperado = [15, 15];
+            $contadorArray = count($arrayCuadrado);
+            
+            $resultado = sumarDiagonales($arrayCuadrado, $contadorArray);
+            
+            return ($resultado == $resultadoEsperado);
+        }
+
+        function testsumarDiagonalesMatrizIndefinida(){
+
+            $arrayCuadrado;
+            $resultadoEsperado = "Error inesperado en sumar filas, comprueba arrayCuadrado";
+            $contadorArray = 1;
+
+            try{
+                sumarDiagonales($arrayCuadrado, $contadorArray);
+            }catch (Exception $e){
+
+                return ($e->getMessage() == $resultadoEsperado);
+            }                    
+        }
         
-        
-        /*------------------------------------------EJECUTAR TESTS--------------------------------------------*/
+
 
 
 
@@ -216,21 +255,36 @@
         }
 
         echo"<br>Test pintar cuadrado<br>";
-        testPintarCuadradoCorrecto();
-        testPintarCuadradoErroneo();
+        testPintarCuadrado1();
+        testPintarCuadrado2();
 
-        echo"<br>Tests analizar cuadrado<br>";
+        echo"<br>-------------------------------------------------------------------------------";
+
+        echo"<br><br>Tests analizar cuadrado<br>";
         test("testAnalizarCuadradoCorrecto");
         test("testAnalizarCuadradoErroneo");
         test("testAnalizarCuadradoPequeño");
 
+        echo"<br>-------------------------------------------------------------------------------";
+
         echo "<br><br>Tests sumar filas<br>";
         test("testsumarFilasValorCorrecto");
         test("testsumarFilasValorErroneo");
-
-
-        test("testsumarFilasValorCero");
         test("testsumarFilasMatrizIndefinida");
-        test("testsumarFilasContadorIndefinido");
+
+        echo"<br>-------------------------------------------------------------------------------";
+
+        echo "<br><br>Tests sumar columnas<br>";
+        test("testsumarColumnasValorCorrecto");
+        test("testsumarColumnasValorErroneo");
+        test("testsumarColumnasMatrizIndefinida");
+
+        echo"<br>-------------------------------------------------------------------------------";
+
+        echo "<br><br>Tests sumar diagonales<br>";
+        test("testsumarDiagonalesValorCorrecto");
+        test("testsumarDiagonalesValorErroneo");
+        test("testsumarDiagonalesMatrizIndefinida");
+
 
         
