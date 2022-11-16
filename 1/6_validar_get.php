@@ -22,15 +22,15 @@
 
             <div class="segunda_columna">
 
-                <p class="texto1">TEXTO AQUÍ
+                <p class="texto1">
 
-                    <?php 
-                        function validarParametroName(){
-                            $res = "-";
-                            $name = htmlspecialchars($_GET["name"]);
+                    <?php
+                        function validarParametro(){
+                            $res = "";
+                            $letra = htmlspecialchars($_GET["letra"]);
 
-                            if(isset($name)){
-                                $res = $name;
+                            if(isset($letra)){
+                                $res = $letra;
                             }
                             return $res;
                         }
@@ -38,7 +38,10 @@
                         ini_set('display_errors', 'On');
                         ini_set('html_errors', 0);
                             
-                        $variable_letra = obtenerParametro("letra");
+                        $variable_letra = validarParametro("letra");
+
+
+    
 
                         if ($variable_letra=="")
                         {
@@ -46,9 +49,11 @@
                         }
                         else
                         {
-                            require("funciones_y_condiciones.php"); 
+                            require("7_funciones_y_condiciones.php"); 
 
-                            $mensaje = 'La letra: '.$variable_letra.' ';
+                            $esVocal = esVocal($variable_letra);
+
+                            $mensaje = 'El caracter '.$variable_letra.' ';
                             $mensaje_es_vocal = esVocal($variable_letra) ? 'es una vocal' : 'no es una vocal';
                             echo $mensaje.$mensaje_es_vocal;
                         }

@@ -6,9 +6,7 @@
     $cadena = 'Una mosca volava per la llum';
 
     $vocales = ["a", "e", "i", "o", "u"];
-
     
-
     echo $cadena." // ";
     
     $fraseCambiada = escribirFrase($cadena, $vocales);

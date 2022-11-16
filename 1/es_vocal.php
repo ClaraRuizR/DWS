@@ -19,7 +19,7 @@
                 <h2>Ejercicios</h2>
 
                 <ul class="lista_ejercicios">
-                    <li>EJERCICIOS AQUÍ</li>
+                    <li></li>
                 </ul>
 
             </div>
