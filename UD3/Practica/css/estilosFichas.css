@@ -1,0 +1,149 @@
+* {
+    margin: 0px; 
+    padding: 0px;
+    
+}
+
+.contenedor{
+    background-color: black;
+    height: 100vh;
+    width: 100%;
+    display: table;
+}
+
+.centro1{
+    background-color: blue;
+    height: 95%;
+    display: table-row;
+    background-image: url(../img/patronHalloween.jpg);
+}
+
+.centro2{
+    background-image: url(../img/cifiFondo.jpg);
+    background-size: 110%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100%;
+}
+
+.pelicula{
+    padding: 40px;
+    display: table;
+    
+}
+
+.titulo1{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    font-size: 50px;
+    font-family: 'Allerta Stencil', sans-serif;
+    font-variant: small-caps;
+}
+
+.titulo2{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    font-size: 50px;
+    color: white;
+    font-family: 'Syne Mono', monospace;
+}
+
+.contenedorImagen{
+    float:left;
+    height: 600px;
+    width: 440px;
+    margin-right: 100px;
+}
+
+.imagenPeli{
+    height: 100%;
+    width: 100%;
+}
+
+.cuerpo1{
+    background-color: rgba(220, 189, 102, 0.735);
+    width: 60%;
+    height: 600px;
+    float: left;
+    margin: auto;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.cuerpo2{
+    background-color: rgba(170, 52, 109, 0.735);
+    width: 60%;
+    height: 600px;
+    float: left;
+    margin: auto;
+    font-family: 'Syne Mono', monospace;
+}
+
+.cuadroInfo{ 
+    padding: 30px;
+    height: 100px;
+    width: 90%;
+    font-size: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.textoInfo{
+
+    text-align: justify;
+    color: white;
+    
+
+}
+
+.cuadroSinopsis1{
+    color: white;
+    padding: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+    height: 250px;
+}
+
+.cuadroSinopsis2{
+    color: white;
+    padding: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+    height: 250px;
+
+}
+
+.sinopsis{
+
+    text-align: justify;
+    font-size: 22px;
+
+}
+
+.cuadroVotos{
+    background-color: darkblue;
+    height: 50px;
+    width: 100px;
+    margin: auto;
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+.textoVoto{
+    padding: 15px;
+    text-align: center;
+    color: white;
+}
+
+.pie{
+    background-color: rgb(40, 39, 48);
+    height: 40px;
+    display: table-row;
+    color: white;
+    text-align: center;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 22px;
+}
+
+.textoPie{
+    margin: 10px;
+}

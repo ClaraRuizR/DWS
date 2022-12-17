@@ -1,0 +1,195 @@
+* {
+    margin: 0px; 
+    padding: 0px;
+    
+}
+
+.contenedor{
+    background-color: black;
+    height: 100vh;
+    width: 100%;
+    display: table;
+}
+
+.cabecera{
+    background-color: rgb(40, 39, 48);
+    height: 100px;
+    display: table-row;
+}
+
+.textoCabecera{
+    margin: 20px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 90px;
+    text-align: center;
+    color: white;
+    font-variant: small-caps;
+}
+
+.centro{
+    background-color: blue;
+    height: 80%;
+    display: table-row;
+}
+
+.contenedorPeliculas1{
+    height: 100%;
+    width: 100%;
+    background-image: url(../img/patronHalloween.jpg);
+}
+
+.contenedorPeliculas2{
+    height: 100%;
+    width: 100%;
+    background-image: url(../img/cifiFondo.jpg);
+    background-size: 110%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+}
+
+.pie{
+    background-color: rgb(40, 39, 48);
+    height: 40px;
+    display: table-row;
+    color: white;
+    text-align: center;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 22px;
+}
+
+.textoPie{
+    margin: 10px;
+}
+
+/*.primeraColumna{
+    float:left;
+    height: 100%;
+    width: 0%;
+    background-color: rgb(129, 162, 170);
+}
+
+.segundaColumna{
+    float:left;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(189, 189, 189);
+    
+}*/
+
+.cuadroPelicula1{
+    margin-right: 100px;
+    margin-left: 100px;
+    background-color: rgba(251, 227, 204, 0.636);
+    padding: 10px 40px 40px 40px;
+    border-top: 2px dashed rgb(141, 141, 141);
+    border-bottom: 2px dashed rgb(141, 141, 141);
+    display: table;
+}
+
+.cuadroPelicula2{
+    margin-right: 100px;
+    margin-left: 100px;
+    background-color: rgba(158, 193, 253, 0.636);
+    padding: 10px 40px 40px 40px;
+    border-top: 2px dashed rgb(141, 141, 141);
+    border-bottom: 2px dashed rgb(141, 141, 141);
+    display: table;
+}
+
+.votos{
+    text-align: right;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 22px;
+}
+
+.imagenPeli{
+    height: 100%;
+    width: 100%;
+}
+
+.contenedorImagen{
+    float:left;
+    height: 300px;
+    width: 220px;
+    margin-right: 50px;
+    display: table-row;
+    
+}
+
+.contenedorSinopsis1{
+    background-color: #ffae00;
+    border-left: 5px solid black;
+    font-size: 20px;
+    color: white;
+    padding: 40px;
+    width: 70%;
+    height: 220px;
+    float: left;
+    margin: auto;
+    font-family: 'Work Sans', sans-serif;
+    text-shadow: black 0.1em 0.1em 0.2em;
+    display: table; 
+}
+
+.contenedorSinopsis2{
+    background-color: rgba(161, 38, 97, 0.722);
+    border-left: 5px solid black;
+    font-size: 20px;
+    color: white;
+    padding: 40px;
+    width: 70%;
+    height: 220px;
+    float: left;
+    margin: auto;
+    font-family: 'Work Sans', sans-serif;
+    text-shadow: black 0.1em 0.1em 0.2em;
+    display: table; 
+}
+
+.sinopsis{
+    text-align: justify;
+
+}
+
+.textoEnlaceFicha{
+    text-align: right;
+    padding: 20px;
+    text-shadow: none;
+    font-size: 20px;
+}
+
+.enlaceFicha{
+    color: rgb(43, 0, 142);
+    text-decoration: none;
+}
+
+.enlaceFicha:hover{
+    color: rgb(137, 137, 137);
+}
+
+.tituloPelicula1{
+    font-family: 'Allerta Stencil', sans-serif;
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+    font-variant: small-caps;
+    text-shadow: black 0.1em 0.1em 0.2em
+}
+
+.tituloPelicula2{
+    font-family: 'Syne Mono', monospace;
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+    font-variant: small-caps;
+    text-shadow: black 0.1em 0.1em 0.2em
+}
+
+
+.votos{
+    padding-bottom: 15px;
+}
+
+
+.duracion{
+    padding-top: 20px;
+}

@@ -1,0 +1,84 @@
+*{
+    margin: 0px; 
+    padding: 0px;
+}
+
+.contenedor{
+    background-color: black;
+    height: auto;
+    width: auto;
+    background-image: url(../img/fondo2.jpg);
+    background-size: cover;
+}
+
+.centro{
+    font-family: 'Oswald', sans-serif;
+    height: 97%;
+    width: 100%;
+}
+
+.textoCartelera{
+    position: relative;
+    top: 300px;
+    margin:auto;
+}
+
+.tituloCartelera{
+    font-family: 'Oswald', sans-serif;
+    font-size: 70px;
+    text-align: center;
+    color: white;
+    font-variant: small-caps;
+    text-shadow: black 0.1em 0.1em 0.2em;
+    
+}
+
+.botones{
+    text-align: center;
+    position: relative;
+    top: 80px;
+}
+
+.boton{
+    width: 200px;
+    height: 70px;
+    background-color: white;
+    padding: 20px;
+    border: 2px black solid;
+    display: inline-block;
+    margin: 30px;
+}
+
+.enlace{
+    position: relative;
+    top: 10px;
+    font-family: 'Oswald', sans-serif;
+    color: black;
+    font-size: 30px;
+    text-decoration: none;
+    font-variant: small-caps;
+}
+
+.enlace:hover{
+    color: orange;
+}
+
+
+.subtituloCartelera{
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    text-shadow: black 0.1em 0.1em 0.2em
+}
+
+.pie{
+    height: 3%;
+    display: table-row;
+    color: white;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 22px;
+    text-align: center;
+    text-shadow: black 0.1em 0.1em 0.2em;
+}
+
