@@ -1,10 +1,10 @@
 <?php
-        require('claseFicha.php');
+        require('clasePelicula.php');
 
         ini_set('display_errors', 'On');
         ini_set('html_errors', 0);
 
-        $f = new Ficha();
+        $f = new Pelicula();
 
         $idPelicula = $f->revisarId();
 

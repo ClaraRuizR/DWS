@@ -25,6 +25,7 @@ require('clasePelicula.php');
 
                 $p = new Pelicula(); 
                 $categoria = $p->revisarCategoria();
+                $datos = $p-> obtenerDatos($categoria);
 
                 $titulo = '';
 
@@ -42,9 +43,6 @@ require('clasePelicula.php');
         <div class="centro">
                 
             <?php
-                
-
-                $datos = $p-> obtenerDatos($categoria);
                 $p->pintarPelicula($datos, $categoria);
             ?>
           

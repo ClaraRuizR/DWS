@@ -62,21 +62,6 @@
     margin: 10px;
 }
 
-/*.primeraColumna{
-    float:left;
-    height: 100%;
-    width: 0%;
-    background-color: rgb(129, 162, 170);
-}
-
-.segundaColumna{
-    float:left;
-    height: 100%;
-    width: 100%;
-    background-color: rgb(189, 189, 189);
-    
-}*/
-
 .cuadroPelicula1{
     margin-right: 100px;
     margin-left: 100px;
@@ -159,13 +144,22 @@
     font-size: 20px;
 }
 
-.enlaceFicha{
+.enlaceFicha1{
     color: rgb(43, 0, 142);
     text-decoration: none;
 }
 
-.enlaceFicha:hover{
-    color: rgb(137, 137, 137);
+.enlaceFicha2{
+    color: rgb(57, 166, 199);
+    text-decoration: none;
+}
+
+.enlaceFicha1:hover{
+    color: rgb(255, 0, 0);
+}
+
+.enlaceFicha2:hover{
+    color: rgb(244, 243, 243);
 }
 
 .tituloPelicula1{
