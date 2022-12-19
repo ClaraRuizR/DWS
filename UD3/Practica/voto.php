@@ -22,8 +22,6 @@ $q = new Consulta();
 
 $voto = $q->sumarVoto($idPelicula);
 
-//Query con el director y los actores
-
 ?>
 
 <head>
@@ -49,8 +47,3 @@ $voto = $q->sumarVoto($idPelicula);
     
 </body>
 </html>
-
-
-
-
-

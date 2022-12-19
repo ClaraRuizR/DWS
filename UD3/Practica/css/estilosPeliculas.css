@@ -98,6 +98,7 @@
     border-top: 2px dashed rgb(141, 141, 141);
     border-bottom: 2px dashed rgb(141, 141, 141);
     display: table;
+    
 }
 
 .cuadroPelicula2{
@@ -119,6 +120,11 @@
 .imagenPeli{
     height: 100%;
     width: 100%;
+}
+.cuerpo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .contenedorImagen{

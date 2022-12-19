@@ -9,6 +9,8 @@
     width: auto;
     background-image: url(../img/fondo2.jpg);
     background-size: cover;
+    display: table;
+
 }
 
 .centro{

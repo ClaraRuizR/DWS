@@ -40,6 +40,8 @@ class Pelicula{
     
             echo "<h2 class='tituloPelicula$pelicula->categoria'>$pelicula->titulo</h2>";
             echo "<p class='votos'>Votos: $pelicula->votos</p>";
+
+            echo "<div class='cuerpo'>";
     
             echo "<div class='contenedorImagen'><img class='imagenPeli' src='img/$pelicula->imagen' alt='imagen'></div>";
             
@@ -48,6 +50,8 @@ class Pelicula{
                 echo "<p class='textoEnlaceFicha'><a href='ficha.php?id_pelicula=$pelicula->idPelicula' class='enlaceFicha$pelicula->categoria'>Ver ficha</a></p>";
     
                 echo "<div class='duracion'>Duración: $pelicula->duracion min</div>";
+            echo "</div>";
+
             echo "</div>";
     
             echo "</div>";
@@ -87,13 +91,16 @@ class Pelicula{
         echo "<div class='pelicula'>";
 
         echo "<h1 class='titulo$ficha->categoria'>$ficha->titulo</h1>";
+        
+        echo "<div class='cuadroCentro'>";
 
         echo "<div class='contenedorImagen'><img class='imagenPeli' src='img/$ficha->imagen' alt='imagen'></div>";
+
         echo "<div class='cuerpo$ficha->categoria'>";
 
         echo "<div class='cuadroInfo'>";
 
-        echo "<p class='textoInfo'> Director: $ficha->nombreDirector <br>Actores:" . $ficha->nombresActores . "<br>Año: $ficha->anyo <br>Duración: $ficha->duracion</p></div>";
+        echo "<p class='textoInfo'> Director: $ficha->nombreDirector <br>Actores:" . $ficha->nombresActores . "<br>Año: $ficha->anyo <br>Duración: $ficha->duracion min</p></div>";
 
         echo "<div class='cuadroSinopsis$ficha->categoria'><p class='sinopsis'>$ficha->sinopsis</p></div>";
 
@@ -104,6 +111,8 @@ class Pelicula{
                     <input class='botonVoto' name='botonVoto' type='submit' value='Votar'>
                 </form>
             </div>";
+
+        echo "</div>";
 
         echo "</div>";
 

@@ -47,19 +47,19 @@ Class Consulta {
                         $arrayCategorias[$i] = $c;
                         $i++;
                     }
+                    
                 return $arrayCategorias;
         
                 } else{
                     echo "No hay resultados.";
+                    return NULL;
                 }
         
             }
 
         }catch(mysqli_sql_exception $e){
             echo "Consulta errónea: por favor, revisa la sintaxis de tu consulta.";
-        }
-    
-        
+        }     
     }
 
     function obtenerNombreCategoria($idCategoria){
@@ -189,22 +189,6 @@ Class Consulta {
                 T_Actores ON T_Actor_Pelicula.ID_actor = T_Actores.ID  GROUP BY T_Peliculas.ID) AS TActores
         WHERE TActores.ID_Pelicula = T_Peliculas.ID AND T_Peliculas.ID = '".$sanitizedCategoria. "';";
 
-        /*$consulta = "SELECT 
-	        T_Peliculas.ID, titulo, año, duracion, sinopsis, imagen, votos, id_categoria, nombre, nombre_actor, nombre_director
-        FROM 
-	        T_Peliculas
-                INNER JOIN 
-            T_Categorias ON T_Peliculas.id_categoria = T_Categorias.ID
-                INNER JOIN
-            T_Actor_Pelicula ON T_Peliculas.ID = T_Actor_Pelicula.ID_pelicula
-                INNER JOIN 
-            T_Actores ON T_Actor_Pelicula.ID_actor = T_Actores.ID
-                INNER JOIN 
-            T_Directores ON T_Peliculas.id_director = T_Directores.ID
-        WHERE 
-            T_Peliculas.ID = '".$sanitizedCategoria. "';";*/
-
-    
         $resultado = mysqli_query($conexion, $consulta);
 
         try{

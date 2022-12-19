@@ -48,6 +48,12 @@
     font-family: 'Syne Mono', monospace;
 }
 
+.cuadroCentro{
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
 .contenedorImagen{
     float:left;
     height: 600px;
@@ -91,11 +97,7 @@
 }
 
 .textoInfo{
-
-    text-align: justify;
     color: white;
-    
-
 }
 
 .cuadroSinopsis1{
@@ -107,7 +109,7 @@
 
 .cuadroSinopsis2{
     color: white;
-    padding: 30px;
+    padding: 50px;
     padding-left: 50px;
     padding-right: 50px;
 
