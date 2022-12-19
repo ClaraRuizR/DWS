@@ -1,0 +1,32 @@
+*{
+    margin: 0px; 
+    padding: 0px;
+}
+
+.contenedor{
+    background-image: url(../img/fondo3.jpg);
+    background-size: 110%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: black;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content:end;
+    align-items:center;
+}
+
+.mensaje{
+    height: 100px;
+    width: 400px;
+    color: white;
+    font-size: 30px;
+    font-family: 'Oswald', sans-serif;
+}
+
+
+
+.enlaceVolver{
+
+    color: black;
+}

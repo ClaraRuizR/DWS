@@ -1,6 +1,16 @@
 <?php
 
-require('clasePelicula.php');
+    require('clasePelicula.php');
+    require_once('consulta.php');
+
+    ini_set('display_errors', 'On');
+    ini_set('html_errors', 0);
+
+    $p = new Pelicula();
+    $q = new Consulta();
+        
+    $categoria = $p->revisarCategoria();
+    $ordenacion = $p->revisarOrdenacion();
 
 ?>
 
@@ -20,20 +30,17 @@ require('clasePelicula.php');
             <p class="textoCabecera">
                 <?php
 
-                ini_set('display_errors', 'On');
-                ini_set('html_errors', 0);
-
-                $p = new Pelicula(); 
-                $categoria = $p->revisarCategoria();
-                $datos = $p-> obtenerDatos($categoria);
-
-                $titulo = '';
-
-                if($categoria == 1){
-                    $nombre = 'Terror';
-                } elseif($categoria == 2){
-                    $nombre = 'Ciencia-Ficción';
+                if($ordenacion == 'def'){
+                    $orden = " ";
+                } else{ 
+                    $valores = explode(",", $ordenacion);
+                    $orden = "ORDER BY ". $valores[0] . " " . strtoupper($valores[1]);
                 }
+
+                $datos = $q-> obtenerConsultaPeliculas($categoria, $orden);
+
+                $nombre = $q->obtenerNombreCategoria($categoria);
+                     
                 echo"Películas de $nombre"
                 
                 ?>

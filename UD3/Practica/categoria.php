@@ -1,6 +1,10 @@
 <?php
 
+ini_set('display_errors', 'On');
+ini_set('html_errors', 0);
+
 require('claseCategoria.php');
+require_once('consulta.php');
 
 ?>
 
@@ -27,8 +31,9 @@ require('claseCategoria.php');
                 ini_set('html_errors', 0);
 
                 $c = new Categoria();
+                $q = new Consulta();
 
-                $datos = $c->obtenerDatos();
+                $datos = $q->obtenerConsultaCategoria();
                 
                 $c->pintarCategoria($datos);
 

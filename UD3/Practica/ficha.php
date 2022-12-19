@@ -1,5 +1,6 @@
 <?php
         require('clasePelicula.php');
+        require_once('consulta.php');
 
         ini_set('display_errors', 'On');
         ini_set('html_errors', 0);
@@ -8,7 +9,9 @@
 
         $idPelicula = $f->revisarId();
 
-        $ficha = $f->obtenerDatosFicha($idPelicula);
+        $q = new Consulta();
+
+        $datos = $q->obtenerConsultaFicha($idPelicula);
 
     ?>
 
@@ -24,7 +27,7 @@
     <div class='contenedor'>
         
         <?php 
-            $f->pintarFicha($ficha);
+            $f->pintarFicha($datos);
         ?>
 
         <div class="pie"><p class="textoPie">Clara Ruiz Ruiz - DWS</p></div>

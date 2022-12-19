@@ -6,7 +6,7 @@ class Pelicula{
 
     }
 
-    function init($idPelicula, $titulo, $anyo, $duracion, $sinopsis, $imagen, $votos, $categoria, $nombreCategoria){
+    function init($idPelicula, $titulo, $anyo, $duracion, $sinopsis, $imagen, $votos, $categoria, $nombreCategoria, $nombresActores, $nombreDirector){
         $this->idPelicula = $idPelicula;
         $this->titulo = $titulo;
         $this->anyo = $anyo;
@@ -16,58 +16,20 @@ class Pelicula{
         $this->votos = $votos;
         $this->categoria = $categoria;
         $this->nombreCategoria = $nombreCategoria;
+        $this->nombresActores = $nombresActores;
+        $this->nombreDirector = $nombreDirector;
     }
 
-    function obtenerDatos($categoria){
-
-        $conexion = mysqli_connect('localhost','root','root');
     
-        if (mysqli_connect_errno()){
-            echo "Error al acceder a MySQL: " . mysqli_connect_error();
-        }
-    
-        mysqli_select_db($conexion, 'cartelera2');
-        $sanitizedCategoria = mysqli_real_escape_string($conexion, $categoria);
-    
-        //$consulta = "SELECT T_Peliculas.ID, titulo, año, duracion,sinopsis,  imagen, votos, id_categoria FROM T_Peliculas  WHERE id_categoria ='".$sanitizedCategoria. "'ORDER BY votos DESC;";
-        $consulta = "SELECT T_Peliculas.ID, titulo, año, duracion, sinopsis, imagen, votos, id_categoria, nombre
-            FROM T_Peliculas
-            INNER JOIN T_Categorias ON T_Peliculas.id_categoria = T_Categorias.ID
-            WHERE id_categoria ='".$sanitizedCategoria. "'ORDER BY votos DESC;";
-
-        try{
-            $resultado = mysqli_query($conexion, $consulta);
-            if(!$resultado){
-                $mensaje = 'Consulta inválida' .mysqli_error($conexion) . "\n";
-                $mensaje .= 'Consulta realizada: ' . $consulta;
-                die($mensaje);
-        
-            } else{
-                if(($resultado->num_rows) > 0){
-                    $arrayPeliculas = [];
-                    $i = 0;
-                    while($registro = mysqli_fetch_assoc($resultado)){
-                         
-                        $p = new Pelicula();
-                        $p->init($registro['ID'], $registro['titulo'], $registro['año'], $registro['duracion'], $registro['sinopsis'], $registro['imagen'],  $registro['votos'], $registro['id_categoria'], $registro['nombre']);
-                        $arrayPeliculas[$i] = $p;
-                        $i++;
-                    }
-                return $arrayPeliculas;
-                } else{
-                    echo "No hay resultados.";
-                }
-            }
-
-        }catch(mysqli_sql_exception $e){
-            echo "Consulta errónea: por favor, revisa la sintaxis de tu consulta.";
-        }
-    
-        
-    }
 
     function pintarPelicula($arrayPeliculas, $categoria){
 
+        echo "<div class='ordenacion'>
+            <div class='botonOrden'><a href='peliculas.php?categoria=$categoria&ordenacion=titulo,asc' class='enlace'>Orden por título ascendente</a></div>
+            <div class='botonOrden'><a href='peliculas.php?categoria=$categoria&ordenacion=titulo,desc' class='enlace'>Orden por título descendente</a></div>
+            <div class='botonOrden'><a href='peliculas.php?categoria=$categoria&ordenacion=votos,asc' class='enlace'>Orden por votos ascendente</a></div>
+            <div class='botonOrden'><a href='peliculas.php?categoria=$categoria&ordenacion=votos,desc' class='enlace'>Orden por votos descendente</a></div>
+        </div>";
 
         echo "<div class='contenedorPeliculas$categoria'>";
     
@@ -108,6 +70,17 @@ class Pelicula{
         return $categoria;
     }
 
+    function revisarOrdenacion(){
+        $ordenacion = "-";
+        $ord = htmlspecialchars($_GET["ordenacion"]);
+        
+        if(isset($ord)){
+            $ordenacion = $ord;
+        }
+
+        return $ordenacion;
+    }
+
     function pintarFicha($ficha){
         echo "<div class='centro$ficha->categoria'>";
 
@@ -120,7 +93,7 @@ class Pelicula{
 
         echo "<div class='cuadroInfo'>";
 
-        echo "<p class='textoInfo'> Director: AQUÍ IRÁ EL DIRECTOR <br>Actores: AQUÍ VAN LOS ACTORES <br>Año: $ficha->anyo <br>Duración: $ficha->duracion</p></div>";
+        echo "<p class='textoInfo'> Director: $ficha->nombreDirector <br>Actores:" . $ficha->nombresActores . "<br>Año: $ficha->anyo <br>Duración: $ficha->duracion</p></div>";
 
         echo "<div class='cuadroSinopsis$ficha->categoria'><p class='sinopsis'>$ficha->sinopsis</p></div>";
 
@@ -131,8 +104,6 @@ class Pelicula{
                     <input class='botonVoto' name='botonVoto' type='submit' value='Votar'>
                 </form>
             </div>";
-
-        //echo "<div class='cuadroVotos'><p class='textoVoto'>Voto</p></div>";
 
         echo "</div>";
 
@@ -150,49 +121,6 @@ class Pelicula{
             $idPelicula = $id;
         }
         return $idPelicula;
-    }
-
-    function obtenerDatosFicha($idPelicula){
-
-        $conexion = mysqli_connect('localhost','root','root');
-    
-        if (mysqli_connect_errno()){
-            echo "Error al acceder a MySQL: " . mysqli_connect_error();
-        }
-    
-        mysqli_select_db($conexion, 'cartelera2');
-        
-        $sanitizedCategoria = mysqli_real_escape_string($conexion, $idPelicula);
-    
-        $consulta = "SELECT T_Peliculas.ID, titulo, año, duracion, sinopsis, imagen, votos, id_categoria, nombre 
-        FROM T_Peliculas
-        INNER JOIN T_Categorias ON T_Peliculas.id_categoria = T_Categorias.ID
-        WHERE T_Peliculas.ID = '".$sanitizedCategoria. "';";    
-        $resultado = mysqli_query($conexion, $consulta);
-
-        try{
-            if(!$resultado){
-                $mensaje = 'Consulta inválida' .mysqli_error($conexion) . "\n";
-                $mensaje .= 'Consulta realizada: ' . $consulta;
-                die($mensaje);
-            } else{
-                if(($resultado->num_rows) > 0){
-                    while($registro = mysqli_fetch_assoc($resultado)){
-                       
-                        $pelicula = new Pelicula();
-                        $pelicula->init($registro['ID'], $registro['titulo'], $registro['año'], $registro['duracion'], $registro['sinopsis'], $registro['imagen'],  $registro['votos'], $registro['id_categoria'], $registro['nombre']);
-                    }
-    
-                return $pelicula;
-                } else{
-                    echo "No hay resultados.";
-                }
-            }
-
-        } catch(mysqli_sql_exception $e){
-            echo "Consulta errónea: por favor, revisa la sintaxis de tu consulta.";
-        }
- 
     }
 
 }

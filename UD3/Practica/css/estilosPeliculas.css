@@ -48,6 +48,34 @@
     
 }
 
+.ordenacion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(40, 39, 48);
+}
+
+.botonOrden{
+    width: 190px;
+    height: 25px;
+    background-color: white;
+    padding: 20px;
+    border: 2px black solid;
+    display: inline-block;
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.enlace{
+    font-variant: small-caps;
+    font-family: 'Oswald', sans-serif;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
 .pie{
     background-color: rgb(40, 39, 48);
     height: 40px;
