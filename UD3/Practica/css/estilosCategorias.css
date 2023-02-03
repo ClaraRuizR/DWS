@@ -5,8 +5,8 @@
 
 .contenedor{
     background-color: black;
-    height: auto;
-    width: auto;
+    height: 100%;
+    width: 100%;
     background-image: url(../img/fondo2.jpg);
     background-size: cover;
     display: table;
